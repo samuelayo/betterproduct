@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import axios from 'axios';
+import { BACKEND_URL } from './config';
 
 
 class Navbar extends React.Component {
@@ -22,7 +23,7 @@ class Navbar extends React.Component {
     }
 
     onClickLogout(uuid){
-        axios.post(`http://localhost:8000/user/logout`, { uuid })
+        axios.post(`${BACKEND_URL}/user/logout`, { uuid })
       .then(res => {
         sessionStorage.removeItem('better-token');
         sessionStorage.removeItem('better-userDetails');
@@ -63,7 +64,5 @@ class Navbar extends React.Component {
         )
     }
   }
-
-
 
 export default  withRouter(Navbar)

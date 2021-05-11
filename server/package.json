@@ -4,7 +4,10 @@
   "description": "better product user api with postgres and express",
   "main": "index.js",
   "scripts": {
-    "test": "npm run test"
+    "test": "npm run test",
+    "start": "export $(cat env.sh | egrep -v '#|^$' | xargs) && node index.js",
+    "migrate:up": "export $(cat env.sh | egrep -v '#|^$' | xargs) && node_modules/db-migrate/bin/db-migrate up",
+    "migrate:down": "export $(cat env.sh | egrep -v '#|^$' | xargs) && node_modules/db-migrate/bin/db-migrate down"
   },
   "repository": {
     "type": "git",

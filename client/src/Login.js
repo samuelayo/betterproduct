@@ -3,6 +3,7 @@ import axios from 'axios';
 import { withRouter } from 'react-router-dom';
 
 import Field from './Field';
+import { BACKEND_URL } from './config';
 
 import { formStyle, submitStyle } from './Form.css';
 
@@ -42,7 +43,7 @@ class Login extends React.Component {
 
     handleSubmit(data) {
 
-      axios.post(`http://localhost:8000/user/login`, data)
+      axios.post(`${BACKEND_URL}/user/login`, data)
       .then(res => {
         const response = res.data;
         sessionStorage.setItem('better-token', response.token);
