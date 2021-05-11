@@ -11,7 +11,7 @@ Note: This app was built on NODE 14.5.0 and PostgreSQL 13
 - cd ../ (change directory to the parent folder )
 - cd client (change directory into the client folder)
 - yarn (use yarn to install dependencies of the client)
-- if you would like to update the BACKEND_URL on the REACT app, please edit `client/src/congig.js`
+- if you would like to update the BACKEND_URL on the REACT app, please edit `client/src/config.js`
 - build the front end code. `npm run build`
 - Once the build is completed, move back to the server folder and run `npm start`
 - navigate to http://localhost:8000
