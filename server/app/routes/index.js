@@ -11,4 +11,15 @@ router.get('/', (req, res) => {
 });
 
 
+/**
+ * This function enables the user to log in to the system
+ * @param req {object}. An express request object, which contains body, 
+ * an object containing the username, password
+ * @return npm {Object}. user data
+ */
+router.post('/user/login', (req, res) => {
+
+})
+
+
 module.exports = router;
