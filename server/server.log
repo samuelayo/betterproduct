@@ -47,3 +47,5 @@
 {"level":"info","message":"Application started on port 3024","timestamp":"2021-05-11T11:00:28.380Z"}
 {"level":"info","message":"Application starting...","timestamp":"2021-05-11T11:01:27.487Z"}
 {"level":"info","message":"Application started on port 3024","timestamp":"2021-05-11T11:01:27.497Z"}
+{"level":"info","message":"Application starting...","timestamp":"2021-05-11T12:35:21.721Z"}
+{"level":"info","message":"Application started on port 8000","timestamp":"2021-05-11T12:35:21.745Z"}
