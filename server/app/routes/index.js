@@ -2,14 +2,16 @@ const express = require('express');
 
 const router = express.Router();
 
+const path = require('path');
+
 const authController = require('../controller/auth')
 
 
 /**
- * This function acts as the health check route.
+ * This function serves the frontend 
  */
 router.get('/', (req, res) => {
-    res.status(200).json({ message: 'Request Service.' });
+    res.sendFile(path.join(__dirname, '../../../client/build', 'index.html'))
 });
 
 

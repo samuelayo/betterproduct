@@ -9,6 +9,7 @@ const loggerInit = require('./logger');
 const routes = require('../app/routes/index');
 const config = require('./index');
 const logDirectory = './log';
+const path = require('path');
 const checkLogDir = fs.existsSync(logDirectory) || fs.mkdirSync(logDirectory);
 
 const expressConfig = (app) => {
@@ -40,7 +41,8 @@ const expressConfig = (app) => {
         });
     }
 
-    app.use(express.static('../app/static'));
+    console.log(path.join(__dirname, '../../client/build/'))
+    app.use(express.static(path.join(__dirname, '../../client/build')));
     app.use(morgan('combined', { stream: accessLogStream }));
 
     const sess = {
