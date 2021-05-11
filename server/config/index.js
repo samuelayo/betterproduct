@@ -9,7 +9,7 @@ const extend = (util)._extend;
 const defaults = {
     root: path.normalize(`${__dirname}/..`),
     webserver: {
-        port: process.env.PORT || '3024'
+        port: process.env.PORT || '8000'
     },
     application_logging: {
         file: process.env.LOG_PATH,
