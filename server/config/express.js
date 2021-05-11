@@ -1,12 +1,13 @@
 const fs = require('fs');
 const morgan = require('morgan');
+const cookie_parser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const helmet = require('helmet');
 const FileStreamRotator = require('file-stream-rotator');
 const express = require('express');
 const loggerInit = require('./logger');
 const routes = require('../app/routes/index');
-
+const config = require('./index');
 const logDirectory = './log';
 const checkLogDir = fs.existsSync(logDirectory) || fs.mkdirSync(logDirectory);
 
@@ -42,11 +43,13 @@ const expressConfig = (app) => {
     app.use(express.static('../app/static'));
     app.use(morgan('combined', { stream: accessLogStream }));
 
+    app.use(cookie_parser(config.cookie_secret))
 
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({ extended: false }));
 
 
+    
     // Use helmet to secure Express headers
     app.use(helmet());
     app.disable('x-powered-by');
