@@ -20,7 +20,14 @@
   },
   "homepage": "https://github.com/samuelayo/betterproduct#readme",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "db-migrate": "^0.11.12",
-    "db-migrate-pg": "^1.2.2"
+    "db-migrate-pg": "^1.2.2",
+    "express": "^4.17.1",
+    "file-stream-rotator": "^0.5.7",
+    "helmet": "^4.6.0",
+    "i18n": "^0.13.3",
+    "morgan": "^1.10.0",
+    "winston": "^2.3.0"
   }
 }
