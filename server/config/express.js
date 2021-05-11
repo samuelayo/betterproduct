@@ -1,6 +1,6 @@
 const fs = require('fs');
 const morgan = require('morgan');
-const cookie_parser = require('cookie-parser');
+var session = require('express-session')
 const bodyParser = require('body-parser');
 const helmet = require('helmet');
 const FileStreamRotator = require('file-stream-rotator');
@@ -43,7 +43,19 @@ const expressConfig = (app) => {
     app.use(express.static('../app/static'));
     app.use(morgan('combined', { stream: accessLogStream }));
 
-    app.use(cookie_parser(config.cookie_secret))
+    const sess = {
+        secret: config.cookie_secret,
+        cookie: {},
+        resave: false, // don't save session if unmodified
+        saveUninitialized: false, // don't create session until something stored
+    }
+
+    if (app.get('env') === 'production') {
+        app.set('trust proxy', 1) // trust first proxy
+        sess.cookie.secure = true // serve secure cookies
+    }
+       
+    app.use(session(sess))
 
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({ extended: false }));
