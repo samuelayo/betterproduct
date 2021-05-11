@@ -1,0 +1,11 @@
+{
+	"dev": {
+		"ENV": "BETTER_SERVICE_DEV_DATABASE_URL"
+	},
+	"test": {
+		"ENV": "BETTER_SERVICE_TEST_DATABASE_URL"
+	},
+	"prod": {
+		"ENV": "BETTER_SERVICE_PROD_DATABASE_URL"
+	}
+}

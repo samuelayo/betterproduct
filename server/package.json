@@ -1,0 +1,26 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "better product user api with postgres and express",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samuelayo/betterproduct.git"
+  },
+  "keywords": [
+    "better-products"
+  ],
+  "author": "samuel ogundipe",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/samuelayo/betterproduct/issues"
+  },
+  "homepage": "https://github.com/samuelayo/betterproduct#readme",
+  "dependencies": {
+    "db-migrate": "^0.11.12",
+    "db-migrate-pg": "^1.2.2"
+  }
+}
