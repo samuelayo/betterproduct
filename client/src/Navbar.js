@@ -21,8 +21,8 @@ class Navbar extends React.Component {
         this.props.history.push('/edit-profile');
     }
 
-    onClickLogout(username){
-        axios.post(`http://localhost:8000/user/logout`, { username })
+    onClickLogout(uuid){
+        axios.post(`http://localhost:8000/user/logout`, { uuid })
       .then(res => {
         sessionStorage.removeItem('better-token');
         sessionStorage.removeItem('better-userDetails');
@@ -52,7 +52,7 @@ class Navbar extends React.Component {
                     <div>
                     <span className="w3-bar-item ">Hello {userDetails.username}</span>
                     <a className="w3-bar-item w3-button" onClick={this.onClickEdit}>Edit profile</a>
-                    <a className="w3-bar-item w3-button" onClick={() => this.onClickLogout(userDetails.username)}>Logout</a>
+                    <a className="w3-bar-item w3-button" onClick={() => this.onClickLogout(userDetails.uuid)}>Logout</a>
 
                     </div>
                      }
